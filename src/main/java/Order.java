@@ -1,7 +1,7 @@
 public class Order {
-    Products products;
-    int orderNumber;
-    Status status;
+    private Products products;
+    private int orderNumber;
+    private Status status;
 
     public Order(Products products, int orderNumber) {
         this.products = products;

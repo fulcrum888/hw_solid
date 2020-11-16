@@ -6,9 +6,17 @@ import java.util.ArrayList;
 //но дополнительно позволяет добавить товар в корзину, оформить заказ и очисть корзину
 public class ShoppingCart extends Products {
 
-    public ShoppingCart() {
+    private static ShoppingCart instance = null;
+
+    private ShoppingCart() {
         products = new ArrayList<>();
     }
+
+    public static ShoppingCart get() {
+        if (instance == null) instance = new ShoppingCart();
+        return instance;
+    }
+
 
     public void addToCart(Product product) {
         this.products.add(product);
